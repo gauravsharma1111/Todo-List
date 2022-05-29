@@ -1,0 +1,12 @@
+.container-grid{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+}
+.item{
+    margin: 4px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.2s;
+}
+.item:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

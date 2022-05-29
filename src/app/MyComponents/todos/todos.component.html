@@ -1,0 +1,15 @@
+<div class="container my-4">
+    <app-add-todo (onAddTodo)="onAdd($event)"></app-add-todo>
+    <hr>
+    <h3>My Todos</h3>
+    <hr>
+    <div *ngIf="!this.todos?.length; else elseBlock" class="fs-6">Your Don't have any todo items , click 'Add todo' to make your
+        todos!</div>
+    <ng-template #elseBlock>
+        <div class="container-grid">
+            <div *ngFor="let todo of todos; index as i" class="item">
+                <app-todo-item [todo]="todo" [index]="i"  (deleteTodo)="onDeleteTodo($event)" (isTodoDone)="todoDone($event)"></app-todo-item>
+            </div>
+        </div>
+    </ng-template>
+</div>
